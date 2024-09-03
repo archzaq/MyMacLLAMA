@@ -46,7 +46,7 @@ struct ContentView: View {
                         
                         ScrollView {
                             VStack(alignment: .leading) {
-                                ForEach(appModel.previousResponses, id: \.self) { response in
+                                ForEach(appModel.previousResponses.reversed(), id: \.self) { response in
                                     Text(response)
                                         .textSelection(.enabled)
                                         .padding()

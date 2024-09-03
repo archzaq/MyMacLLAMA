@@ -46,7 +46,7 @@ class DataInterface: ObservableObject, Observable {
             "model": "llama3",  // Specify the model to be used
             "prompt": prompt,  // Pass the prompt
             "options": [
-                "num_ctx": 4096  // Specify context options
+                "num_ctx": 8192  // Specify context options
             ]
         ]
         // Encode the request body as JSON
