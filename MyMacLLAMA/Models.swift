@@ -43,10 +43,10 @@ class DataInterface: ObservableObject, Observable {
         request.httpMethod = "POST"  // Set the HTTP method to POST
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")  // Set the content type to JSON
         let body: [String: Any] = [
-            "model": "llama3",  // Specify the model to be used
+            "model": "llama3.1",  // Specify the model to be used
             "prompt": prompt,  // Pass the prompt
             "options": [
-                "num_ctx": 8192  // Specify context options
+                "num_ctx": 16000  // Specify context options
             ]
         ]
         // Encode the request body as JSON
