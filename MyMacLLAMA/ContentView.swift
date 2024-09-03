@@ -72,6 +72,7 @@ struct ContentView: View {
                 // Button to send the current prompt. Triggers sendPrompt function when clicked.
                 Button("Send"){
                     appModel.sendPrompt()
+                    appModel.prompt = ""
                 }
                 .keyboardShortcut(.return)
                 
