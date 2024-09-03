@@ -3,6 +3,7 @@
 //  MyMacLLAMA
 //
 //  Created by Carlos Mbendera on 25/04/2024.
+//  Modified by Zac Reeves on 3/09/2024.
 //
 
 import Foundation
@@ -22,6 +23,8 @@ class DataInterface: ObservableObject, Observable {
     @Published var response: String = ""
     // Track whether a network request is currently being sent
     @Published var isSending: Bool = false
+    // Store previous responses
+    @Published var previousResponses: [String] = []
 
     // Function to handle sending the prompt to a server
     func sendPrompt() {
@@ -77,7 +80,10 @@ class DataInterface: ObservableObject, Observable {
             print(responses)  // Log all responses
             
             DispatchQueue.main.async {
+                // Update the previous responses array
+                self.previousResponses.append(self.response) // Add the previous response
                 self.response = responses.joined(separator: "")  // Combine all responses into one string
+                self.previousResponses.append(self.response) // Add the new combined response
                 print(self.response)  // Print the full response
             }
         }.resume()  // Resume the task if it was suspended
