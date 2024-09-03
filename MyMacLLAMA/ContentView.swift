@@ -46,10 +46,15 @@ struct ContentView: View {
                         
                         ScrollView {
                             VStack(alignment: .leading) {
-                                ForEach(appModel.previousResponses.reversed(), id: \.self) { response in
-                                    Text(response)
-                                        .textSelection(.enabled)
-                                        .padding()
+                                ForEach(appModel.previousResponses.reversed()) { entry in
+                                    VStack(alignment: .leading) {
+                                        Text("Prompt: \(entry.prompt)")
+                                            .font(.headline)
+                                            .padding(.bottom, 2)
+                                        Text("Response: \(entry.response)")
+                                            .padding(.bottom, 10)
+                                    }
+                                    .textSelection(.enabled)
                                 }
                             }
                         }
@@ -108,6 +113,11 @@ struct ContentView: View {
             }
         }
         .padding()
+        .onReceive(appModel.$isSending) { _ in
+            if appModel.isSending {
+                showHistory = false
+            }
+        }
     }
 }
 

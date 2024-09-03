@@ -14,6 +14,13 @@ struct Response: Codable {
     let response: String
 }
 
+// Define a struct that conforms to Identifiable and Hashable
+struct HistoryEntry: Identifiable, Hashable {
+    let id = UUID()  // Unique identifier
+    let prompt: String
+    let response: String
+}
+
 // Class for managing application data and network communication
 class DataInterface: ObservableObject, Observable {
     
@@ -24,7 +31,7 @@ class DataInterface: ObservableObject, Observable {
     // Track whether a network request is currently being sent
     @Published var isSending: Bool = false
     // Store previous responses
-    @Published var previousResponses: [String] = []
+    @Published var previousResponses: [HistoryEntry] = []
 
     // Function to handle sending the prompt to a server
     func sendPrompt() {
@@ -81,9 +88,9 @@ class DataInterface: ObservableObject, Observable {
             
             DispatchQueue.main.async {
                 // Update the previous responses array
-                self.previousResponses.append(self.response) // Add the previous response
                 self.response = responses.joined(separator: "")  // Combine all responses into one string
-                self.previousResponses.append(self.response) // Add the new combined response
+                let newEntry = HistoryEntry(prompt: self.prompt, response: self.response) // Add the new combined response to history
+                self.previousResponses.append(newEntry)
                 print(self.response)  // Print the full response
             }
         }.resume()  // Resume the task if it was suspended
