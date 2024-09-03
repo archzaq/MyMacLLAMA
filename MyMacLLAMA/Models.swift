@@ -89,8 +89,8 @@ class DataInterface: ObservableObject, Observable {
             DispatchQueue.main.async {
                 // Update the previous responses array
                 self.response = responses.joined(separator: "")  // Combine all responses into one string
-                let newEntry = HistoryEntry(prompt: self.prompt, response: self.response) // Add the new combined response to history
-                self.previousResponses.append(newEntry)
+                let newEntry = HistoryEntry(prompt: self.prompt, response: self.response) // Create newEntry to add to history
+                self.previousResponses.append(newEntry) // Add the new combined response to history
                 print(self.response)  // Print the full response
             }
         }.resume()  // Resume the task if it was suspended
