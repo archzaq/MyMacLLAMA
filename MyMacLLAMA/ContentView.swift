@@ -83,6 +83,11 @@ struct ContentView: View {
                 
                 // Button to clear the current prompt and response
                 Button("Clear"){
+                    // If history is open when clear is pressed, clear History
+                    if showHistory {
+                        appModel.previousResponses = []
+                        showHistory.toggle()
+                    }
                     appModel.prompt = "" // Clear the prompt string
                     appModel.response = "" // Clear the response string
                 }
