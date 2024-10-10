@@ -1,5 +1,7 @@
 # My Mac LLAMA App
 
+## Carlos Mbendera did all the hard work! All of it.
+
 ## Overview
 
 My Mac LLAMA App is a menu bar application for macOS that integrates directly into your system's top bar. 
@@ -36,11 +38,15 @@ Once the application is running, you will see a brain icon in your menu bar:
 3. Change the Development Team
 4. Build and run the app
 
-## Beautiful Pictures and Video Demo
+## Beautiful Pictures
 
+### Normal Window
+<img width="348" alt="Screenshot 2024-10-10 at 17 06 37" src="https://github.com/user-attachments/assets/177a7fcd-d462-458d-bd3b-a031f9f938c0">
+<img width="357" alt="Screenshot 2024-10-10 at 17 05 48" src="https://github.com/user-attachments/assets/7632c0eb-e087-4278-af9f-20db8538b329">
 
-<img width="324" alt="Screenshot 2024-04-25 at 9 01 53 PM" src="https://github.com/carlosmbe/MyMacLLAMA/assets/53784701/9d7c41d8-2914-4353-97f8-d3268ecdb0bb">
+### Expanded Window
+<img width="944" alt="Screenshot 2024-10-10 at 17 06 03" src="https://github.com/user-attachments/assets/80c9f252-fc5a-471c-9bf3-b517fce29e00">
 
-
-https://github.com/carlosmbe/MyMacLLAMA/assets/53784701/3d7700ca-aac3-4621-922e-0077b1e09931
+### Prompt History
+<img width="345" alt="Screenshot 2024-10-10 at 17 06 19" src="https://github.com/user-attachments/assets/da87ccee-274d-4858-98d9-d3d5ab1a9d11">
 
